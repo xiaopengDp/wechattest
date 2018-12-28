@@ -1,0 +1,37 @@
+<!--pages/settings/settings.wxml-->
+<view class="mine-wrapper">
+  <view class="avatar-wrapper">
+    <view>
+      <view class="avatar">
+        <image style="border-radius:50%;" src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="text">
+        <text wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
+        <text wx:else bindtap="toLogin">注册 / 登录</text>
+      </view>
+      <!-- <view class="text">
+        <text wx:if="{{userSign==2}}">{{"您还没有填写真实信息，暂不能借书"}}</text>
+        <text wx:elif="{{userSign==1}}">{{"会员用户"}}</text>
+      </view> -->
+    </view>
+  </view>
+  <view  class="setup-list">
+    <navigator url='/pages/modifyPasd/modifyPasd'>
+            <text>修改密码</text>
+            <image src='/images/4.png'></image>
+    </navigator>
+      <navigator url="/pages/static/feedback/feedback">
+            <text>意见反馈</text>
+            <image src='/images/4.png'></image>
+    </navigator>
+      <navigator url='/pages/aboutList/aboutList'>
+            <text>关于</text>
+            <image src='/images/4.png'></image>
+    </navigator>
+      <navigator  bindtap='getSettings'>
+            <text>帮助</text>
+            <image src='/images/4.png'></image>
+    </navigator>
+    <view class='quit' bindtap='quitFn'><text>退出登陆</text></view>
+  </view>
+</view>
