@@ -1,0 +1,109 @@
+
+.gs_gs_calendar_box{
+    background-color:#fff;
+    box-sizing: border-box;
+}
+.canlendarView{
+  padding-bottom:100rpx;
+}
+.canlendarTopView{
+    overflow:hidden;
+    padding:40rpx 20rpx;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+}
+.leftBgView{
+    /* float:left; */
+    width:153rpx;
+    text-align: center;
+}
+.leftView{
+   
+}
+.leftView image{
+    width:60rpx;
+    height:60rpx;
+}
+.centerView{
+    /* float:left; */
+    font-size:32rpx;
+    height:60rpx;
+    line-height:60rpx;
+    width:260rpx;
+    text-align: center;
+}
+.rightBgView{
+    /* float:left; */
+    width:156rpx;
+    text-align: center;
+}
+.rightView{}
+.rightView image{
+    width:60rpx;
+    height:60rpx;
+}
+.weekBgView{
+    overflow:hidden;
+    display:flex;
+    justify-content:space-around;
+}
+.weekView{
+    text-align: center;
+    font-size:30rpx;
+    color:#707070;
+}
+.dateBgView{
+    overflow:hidden;
+    border-top:#DDD 1px solid;
+    border-bottom:#DDD 1px solid;
+    /* margin-bottom:20rpx; */
+    /* display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around; */
+
+}
+.dateEmptyView{
+  display: inline-block;
+  box-sizing: border-box;
+}
+.dateView{
+    display:inline-block;
+    text-align: center;
+    position:relative;
+    box-sizing: border-box;
+}
+.datesView{
+    font-size:30rpx;
+    color:#2b2b2b;
+}
+.dateOn{
+  /* border-radius: 50%; */
+  background-color: #53acfc;
+  color: #fff !important;
+}
+.border_top{
+  border-top:#DDD 1px solid;
+}
+.border_right{
+  border-right:#DDD 1px solid;
+}
+.border_bottom{
+  border-bottom:#DDD 1px solid;
+}
+.border_left{
+  border-left:#DDD 1px solid;
+}
+
+.clocksucceed{
+    /* position:absolute;
+    top:-3rpx;
+    left:20rpx; */
+    /* background-color:#fff; */
+}
+.clocksucceed image{
+    width:50rpx;
+    height:50rpx;
+    vertical-align: middle;
+}

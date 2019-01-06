@@ -17,6 +17,8 @@
 .avatar-wrapper .text {
   text-align: center;
   color: #fff;
+  width: 60%;
+  margin: 0 auto;
 }
 
 /* .avatar-wrapper .text button{

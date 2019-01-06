@@ -1,0 +1,23 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title" style='margin-top:80rpx;'>奖品兑换需要验证是否为富滇银行岔街支行用户</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入姓名" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title" style='margin-top:10rpx;'>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入手机号" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+        </view>
+    </view>
+</view>

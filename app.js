@@ -6,7 +6,11 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.showLoading({
+      title: '....',
+      mask: true
+    });
+    wx.hideLoading();
     // 登录
     wx.login({
       success: res => {
@@ -22,9 +26,7 @@ App({
             this.globalData.token = res.data.data.token;
             this.globalData.isAuth = res.data.data.isAuth == 1;
             this.globalData.isRun = res.data.data.isRun == 1;
-
             if(this.globalData.isAuth){
-              
               // 获取用户信息
               wx.getSetting({
                 success: res => {
@@ -45,6 +47,7 @@ App({
                 }
               })
             }
+            wx.hideLoading();
           }
         });
       }

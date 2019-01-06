@@ -2,6 +2,26 @@
 <view class='page'>
   <view class="container">
     <view class="page-body">
+      <view class='page-section weui-flex'>
+        <view class='weui-flex__item' wx:if="{{hasUserInfo}}">
+          <view class='page-info weui-flex'>
+            <view>
+              <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            </view>
+            <view>
+              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+              <text class="userinfo-nickname" wx:if="{{hasIsAuth}}">已认证</text>
+              <text class="userinfo-nickname" wx:else>未认证</text>
+            </view>
+          </view>
+        </view>
+        <view class='weui-flex__item'>
+          <view class="page-btns weui-flex">
+            <button type="primary" size="mini" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+            <button type="primary" size="mini" wx:if="{{!hasIsAuth}}" bindtap="toAuth">认证</button>
+          </view>
+        </view>
+      </view>
       <view class="page-section page-section-spacing swiper">
         <swiper
           indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
@@ -14,8 +34,10 @@
           </block>
         </swiper>
       </view>
+      <view class='page-section'>
+        <button class="weui-btn" type='primary'>测试</button>
+      </view>
     </view>
-
     <!-- <view class="userinfo">
       <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block>
@@ -29,7 +51,7 @@
   </view>
   <view class="weui-footer">
       <view class="weui-footer__links">
-          <navigator url="" class="weui-footer__link">小黄象</navigator>
+          <navigator url="" class="weui-footer__link">步步为营</navigator>
       </view>
       <view class="weui-footer__text">Copyright © 精品专栏组</view>
   </view>

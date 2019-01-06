@@ -3,12 +3,14 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/rundata/rundata",
-    "pages/settings/settings"
+    "pages/settings/settings",
+    "pages/auth/auth",
+    "pages/demo/demo"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#33cc33",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "步步为盈",
     "navigationBarTextStyle": "#fff"
   },
   "tabBar": {

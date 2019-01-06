@@ -7,7 +7,7 @@
       </view>
       <view class="text">
         <text wx:if="{{hasUserInfo}}">{{userInfo.nickName}}</text>
-        <a wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui_btn weui_btn_primary"> 获取用户信息 </a>
+        <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn" type="primary"> 获取用户信息 </button>
         <!-- <text wx:else bindtap="toLogin">注册 / 登录</text> -->
       </view>
       <!-- <view class="text">

@@ -8,12 +8,32 @@
   line-height: 1.6;
 }
 .page-body{
-  padding-top: 60rpx;
+  padding-top: 30rpx;
 }
 .page-section{
   width: 100%;
   margin-bottom: 60rpx;
+  align-items: center;
 }
+.page-info{
+  align-items: center;
+  font-size: 26rpx;
+  line-height: 52rpx;
+}
+.page-info .userinfo-avatar{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+}
+.page-info .userinfo-nickname{
+  display: block;
+}
+.page-btns{
+  
+}
+
+
 .page-section-spacing{
   box-sizing: border-box;
   padding: 0 50rpx;
