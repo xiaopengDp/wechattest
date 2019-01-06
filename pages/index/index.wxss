@@ -1,21 +1,24 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@import "/style/weui.wxss";
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.page {
+  background-color: #F8F8F8;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.page-body{
+  padding-top: 60rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.page-section{
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+.page-section-spacing{
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+.swiper-item{
+  display: block;
+  height: 340rpx;
 }

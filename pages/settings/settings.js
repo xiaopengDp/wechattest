@@ -1,5 +1,6 @@
 // pages/settings/settings.js
 //获取应用实例
+const urls = require("../../utils/request.js")
 const app = getApp()
 Page({
 
@@ -9,6 +10,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     menuitems: [
       { text: '系统设置', url: '', icon: '../../images/3.png', tips: '' }
       // { text: '预订单', url: '../borrowbook/borrowbook?status=N', icon: '', tips: '' },
@@ -27,7 +29,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse) {
+    } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -98,6 +100,24 @@ Page({
   onShareAppMessage: function () {
 
   },
+  updateUserInfo: function(res){
+    wx.request({
+      url: urls.updateUser,
+      data: { 
+        username: res.nickName,
+        photo: res.avatarUrl,
+        isAuth: 1,
+        token:app.globalData.token
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        
+      }
+    });
+  },
   getSettings: function(){
     wx.openSetting({
       success(res) {
@@ -107,6 +127,14 @@ Page({
         //   "scope.userLocation": true
         // }
       }
+    })
+  },
+  getUserInfo: function (e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.updateUserInfo(e.detail.userInfo);
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
     })
   }
 })

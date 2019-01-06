@@ -7,7 +7,20 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrls: [
+      '/images/banner1.jpg',
+      '/images/banner2.jpg',
+      '/images/banner3.jpg'
+    ],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +29,7 @@ Page({
     })
   },
   onLoad: function () {
+    // 在没有 open-type=getUserInfo 版本的兼容处理
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,8 +57,15 @@ Page({
       })
     }
   },
+  onShow: function(){
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    }
+  },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
