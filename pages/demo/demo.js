@@ -230,7 +230,6 @@ Page({
       judge: 1,
       month: this.data.month,
     });
-
     /**
      * 获取系统信息
      */

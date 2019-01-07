@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    ranks:[
+      { "no": 1, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 2, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 3, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 4, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 5, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 6, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 7, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 8, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 9, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 10, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 11, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 },
+      { "no": 12, "head": "/images/head.png", "nickname": "快乐的小二逼", "run": 99999 }
+    ]
   },
 
   /**

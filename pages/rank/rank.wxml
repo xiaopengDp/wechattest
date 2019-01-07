@@ -1,2 +1,10 @@
 <!--pages/rank/rank.wxml-->
-<text>pages/rank/rank.wxml</text>
+<view class="page">
+  <view class="prize_view">一等奖</view>
+  <view class='rank_item' wx:for="{{ranks}}" wx:key="*this">
+    <label class='rank_no'>{{item.no}}</label>
+    <image class="rank_head" src='{{item.head}}'></image>
+    <text class='rank_nickname'>{{item.nickname}}</text>
+    <text class='rank_run'>{{item.run}}</text>
+  </view>
+</view>

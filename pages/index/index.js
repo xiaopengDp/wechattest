@@ -98,9 +98,9 @@ Page({
       url: '../demo/demo'
     })
   },
-  bindShare:function(){
-    wx.showShareMenu({
-      withShareTicket: true
+  gotoRunRank:function(){
+    wx.navigateTo({
+      url: '../rank/rank'
     })
   }
 })

@@ -1,4 +1,6 @@
 // pages/auth/auth.js
+const app = getApp()
+const urls = require("../../utils/request.js")
 Page({
 
   /**
@@ -6,8 +8,21 @@ Page({
    */
   data: {
     showTopTips: false,
+    name:"",
+    mobile:""
   },
   showTopTips:function(){
+    wx.request({
+      url: urls.authUser,
+      data: { token: app.globalData.token,name:this.data.name,mobile:this.data.mobile },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        console.log(res);
+      }
+    });
     var that = this;
     this.setData({
       showTopTips: true
@@ -17,6 +32,20 @@ Page({
         showTopTips: false
       });
     }, 3000);
+  },
+  binNameInput:function(e){
+    this.setData(
+      {
+        name:e.detail.value
+      }
+    );
+  },
+  binMobileInput: function (e) {
+    this.setData(
+      {
+        mobile: e.detail.value
+      }
+    );
   },
 
   /**
