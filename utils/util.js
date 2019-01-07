@@ -24,7 +24,7 @@ const formatDate = value => {
   var now = new Date();
   var now_new = Date.parse(now.toDateString());  //typescript转换写法
   var milliseconds = now_new - dateTime;
-  var timeSpanStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+  var timeSpanStr = year + '-' + month + '-' + day;
   return timeSpanStr;
 }
 
