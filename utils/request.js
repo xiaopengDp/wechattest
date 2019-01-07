@@ -3,6 +3,7 @@ const urlList = {
   encryRunData:basePath+"/run/data",
   authLogin:basePath+"/auth/login",
   updateUser:basePath+"/user/update",
-  authUser:basePath+"/user/auth"
+  authUser:basePath+"/user/auth",
+  userInfo:basePath+"/user/info"
 }
 module.exports = urlList;

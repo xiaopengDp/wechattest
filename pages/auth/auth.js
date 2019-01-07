@@ -8,10 +8,12 @@ Page({
    */
   data: {
     showTopTips: false,
+    errorTips:"",
     name:"",
     mobile:""
   },
   showTopTips:function(){
+    var that = this;
     wx.request({
       url: urls.authUser,
       data: { token: app.globalData.token,name:this.data.name,mobile:this.data.mobile },
@@ -20,18 +22,27 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: res => {
-        console.log(res);
+      
+        if(res.data.code == 0){
+          wx.navigateBack({
+            delta: 1
+          })
+        }else{
+          this.setData({
+            showTopTips: true,
+            errorTips:res.data.msg
+          });
+          setTimeout(function () {
+            that.setData({
+              showTopTips: false,
+              errorTips:""
+            });
+          }, 3000);
+        }
       }
     });
-    var that = this;
-    this.setData({
-      showTopTips: true
-    });
-    setTimeout(function () {
-      that.setData({
-        showTopTips: false
-      });
-    }, 3000);
+    
+    
   },
   binNameInput:function(e){
     this.setData(

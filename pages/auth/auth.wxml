@@ -15,7 +15,7 @@
                 </view>
             </view>
         </view>
-        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorTips}}</view>
         <view class="weui-btn-area">
             <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
         </view>

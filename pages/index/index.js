@@ -1,13 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const urls = require("../../utils/request.js")
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    hasIsAuth:false,
+    hasIsAuth: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       '/images/banner1.jpg',
@@ -44,6 +44,7 @@ Page({
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
+          hasIsAuth: app.globalData.isAuthUser,
           hasUserInfo: true
         })
         
@@ -69,6 +70,23 @@ Page({
         hasUserInfo: true
       })
     }
+
+    // wx.request({
+    //   url: urls.userInfo,
+    //   data: { token: app.globalData.token },
+    //   method: "GET",
+    //   success: res => {
+    //     if(res.data.data.isAuthUser == 1){
+    //       this.setData({
+    //         hasIsAuth:true
+    //       });
+    //     }else{
+    //       this.setData({
+    //         hasIsAuth: false
+    //       });
+    //     }
+    //   }
+    // });
     
   },
   getUserInfo: function(e) {

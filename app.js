@@ -26,6 +26,7 @@ App({
             this.globalData.token = res.data.data.token;
             this.globalData.isAuth = res.data.data.isAuth == 1;
             this.globalData.isRun = res.data.data.isRun == 1;
+            this.globalData.isAuthUser = res.data.data.isAuthUser == 1;
             if(this.globalData.isAuth){
               // 获取用户信息
               wx.getSetting({
@@ -77,6 +78,7 @@ App({
     userInfo: null,
     token:null,
     isAuth:false,
-    isRun:false
+    isRun:false,
+    isAuthUser:false
   }
 })
