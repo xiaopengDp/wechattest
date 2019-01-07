@@ -2,6 +2,20 @@
 <view class='page' style='display:block'>
     <!-- <view class='gs_bg' bindtap='onhide'></view> -->
     <view class='gs_gs_calendar_box'>
+      <view class="staticsView">
+          <view class="item_view">
+            <label>2285步</label>
+            <label>本月最高</label>
+          </view>
+          <view class="item_view">
+            <label>2285步</label>
+            <label>本月累计</label>
+          </view>
+          <view class="item_view">
+            <label>1.6公里</label>
+            <label>本月累计</label>
+          </view>
+      </view>
       <view class="canlendarView">
           <view class="canlendarTopView">
               <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
@@ -16,20 +30,22 @@
               <view style='width:90rpx; height:90rpx; line-height:90rpx;' class="weekView" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
           </view>
           <view class="dateBgView">
-              <view style='' wx:if="{{hasEmptyGrid}}" class="dateEmptyView" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+              <view style='width: {{ sysW }}px; height: {{ sysW }}px;' wx:if="{{hasEmptyGrid}}" class="dateEmptyView border_right" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
                 
               </view>
               <!--  style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW/2 }}px;' -->
-              <view style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px; height: {{ sysW }}px;line-height: {{ sysW/2 }}px;' class="dateView  border_right {{(marLet+index) > 6 && (marLet+index) < 28 ? 'border_top' : ''}} {{(marLet+index) > 20 && (marLet+index) < 28 ? 'border_bottom' : ''}} {{(empytGrids.length+days.length) > 35 && (marLet+index) > 27 && (marLet+index) < 35 ? 'border_bottom' : ''}}" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+              <view style='width: {{ sysW }}px; height: {{ sysW }}px;line-height: {{ sysW/2 }}px;' class="dateView  border_right {{(marLet+index) > 6 && (marLet+index) < 28 ? 'border_top' : ''}} {{(marLet+index) > 20 && (marLet+index) < 28 ? 'border_bottom' : ''}} {{(empytGrids.length+days.length) > 35 && (marLet+index) > 27 && (marLet+index) < 35 ? 'border_bottom' : ''}}" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
                   <!-- <view   class="datesView {{ item.item ==  getDate && judge==1 ? 'dateOn' : ''}}}">
                     <label style='display:block'>{{item.item}}</label>
                     <label style='display:block'>99999</label>
                   </view> -->
                   <label style='display:block'>{{item.item}}</label>
-                  <label style='display:block'>99999</label>
+                  <image style="width:16px;height:16px;" src='/images/close.png'></image>
+                  <!-- <label style='display:block'>99999</label> -->
                   <!-- <view class='clocksucceed'>99999</view> -->
               </view>
           </view>
+          
       </view>
     </view>
 </view>

@@ -2,7 +2,25 @@
 .gs_gs_calendar_box{
     background-color:#fff;
     box-sizing: border-box;
+    overflow: hidden;
 }
+
+.staticsView{
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+.staticsView .item_view{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.staticsView .item_view label{
+  display: block;
+}
+
 .canlendarView{
   padding-bottom:100rpx;
 }
@@ -59,9 +77,9 @@
     border-top:#DDD 1px solid;
     border-bottom:#DDD 1px solid;
     /* margin-bottom:20rpx; */
-    /* display:flex;
+    display:flex;
     flex-wrap:wrap;
-    justify-content:space-around; */
+    /* justify-content:space-around; */
 
 }
 .dateEmptyView{

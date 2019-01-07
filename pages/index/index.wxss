@@ -29,9 +29,7 @@
 .page-info .userinfo-nickname{
   display: block;
 }
-.page-btns{
-  
-}
+
 
 
 .page-section-spacing{
@@ -41,4 +39,20 @@
 .swiper-item{
   display: block;
   height: 340rpx;
+}
+
+.run-btns{
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.run-btns .item_btn{
+  width: 250rpx;
+  height: 162rpx;
+  text-align: center;
+  border:#AAA solid 1px;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
 }

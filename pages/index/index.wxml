@@ -2,6 +2,7 @@
 <view class='page'>
   <view class="container">
     <view class="page-body">
+      <!-- 个人信息 -->
       <view class='page-section weui-flex'>
         <view class='weui-flex__item' wx:if="{{hasUserInfo}}">
           <view class='page-info weui-flex'>
@@ -16,12 +17,13 @@
           </view>
         </view>
         <view class='weui-flex__item'>
-          <view class="page-btns weui-flex">
+          <view class="weui-flex">
             <button type="primary" size="mini" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
             <button type="primary" size="mini" wx:if="{{!hasIsAuth}}" bindtap="toAuth">认证</button>
           </view>
         </view>
       </view>
+      <!-- banner数据 -->
       <view class="page-section page-section-spacing swiper">
         <swiper
           indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
@@ -34,8 +36,18 @@
           </block>
         </swiper>
       </view>
+      <!-- 运动信息 -->
+      <view class='page-section run-btns'>
+        <view class="item_btn run_record" bindtap='gotoRunRecord'>
+          运动记录
+        </view>
+        <view class="item_btn run_rank" bindtap='gotoRunRank'>
+          步数榜
+        </view>
+      </view>
+
       <view class='page-section'>
-        <button class="weui-btn" type='primary'>测试</button>
+        <button class="weui-btn" type='primary' open-type='share'>叫上亲朋好友一起领礼品啦~</button>
       </view>
     </view>
     <!-- <view class="userinfo">

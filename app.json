@@ -5,7 +5,8 @@
     "pages/rundata/rundata",
     "pages/settings/settings",
     "pages/auth/auth",
-    "pages/demo/demo"
+    "pages/demo/demo",
+    "pages/rank/rank"
   ],
   "window": {
     "backgroundTextStyle": "light",

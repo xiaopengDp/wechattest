@@ -80,7 +80,27 @@ Page({
   },
   toAuth: function(){
     wx.navigateTo({
+      url: '../auth/auth'
+    })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (res) {
+    console.log(res);
+    return {
+      title:"我的转发",
+      imageUrl:"/images/banner1.jpg"
+    }
+  },
+  gotoRunRecord:function(){
+    wx.navigateTo({
       url: '../demo/demo'
+    })
+  },
+  bindShare:function(){
+    wx.showShareMenu({
+      withShareTicket: true
     })
   }
 })
